@@ -1,0 +1,641 @@
+Test Automation:-
+		What ? --> Anything that has been tested manually that are in repetitive in nature and do not require different logic to perform
+		Why  ? --> Reduce/save time ,reduce/save cost , improve quality 
+	
+****	
+		
+Types of Automation:
+
+	1. Front End Automation (Browser, Desktop)
+	2. Backend Automation (Webservices , Databases)
+	
+***	
+
+Web Application --> Any application that runs on browser (Ex:- Facebook, Google)
+
+Popular tools for web automation:
+
+	1. Seleinium (Java , Python, Ruby , C#, Perl, Js)
+	2. Playwright (Java , Python, C#,  Js)
+	3. Cypress (Js)
+	4. Puppeteer (Js)		
+
+****
+
+
+jdk 1.8 --> Software that acts as bridge between the Computer and User
+IDE (Integrated Development Enviornment) --> Where let us edit , modify , compile & excute the code 
+
+Java is Object Oriented Language
+Java is the Base lang for selenium webdriver
+
+
+****
+
+
+How Java Works?
+
+	Type Code in English Language 
+			|
+			|
+			*
+	Store or Save it as .java file
+			|
+			|
+			*
+	Compile it  -->JavaC converts the .java source code into bytecode (( binary code), which is stored in .class files. 
+					Bytecode is an intermediate, platform-independent representation of your program.
+			|
+			|
+			*
+	JVM (Java Virtual Machine) --> Which reads & executes the bytecode  holds or allocates the memory. It acts as Interpreter.
+								An interpreter translates and executes the code line by line during runtime without creating a separate file
+	JRE	(Java Runtime Engine) --> Source code of java/ Standard libraries for running Java program
+
+JDK (Java Development Kit) consists of JVM, JRE & compiler	
+
+****
+
+
+Eclipse Project Creation:
+
+	Group ID    --> Head     --> Lower case
+	Artifact ID --> sub Head --> Upper case
+	
+	Package -->a folder  which contains only (.java) files  --> Lower case
+	
+	Below will be the folder structure if package creates as week1.day1 & week2.day2
+		"." --> creates sub package
+	folder structure --> src/main/java/week1/day1
+	folder structure --> src/main/java/week1/day2
+
+****
+
+
+Java class --> it is a space where we can write a code  --> Upper case
+
+class
+{
+	block of code
+}
+Class is a blue print which defines some properties and behaviours.
+
+Class contains Variables (Data) & Methods (Action)
+
+Class will excutable only if it contains main() method
+
+
+****
+
+Syntax:
+A structure in which you will  write code .
+
+Keyword :
+It holds some meaning in java
+Should not use these keywords as user defined names for class , variable, & methods
+All the keywords will always in lower case.
+
+****
+
+What is data type?
+	Type of value a variable holds .
+	
+Why is data type required ?
+	Provide memory to perform operations to a specfic data
+
+How is data type is stored ?
+		Java stores them using 32 bit of memory
+		
+		
+		
+Types of Data Types?
+			1.Primitive  data type (Pre defined data type)
+			2. Non Primitive data type /derived data  type /User defined data type (Modifying or Mingling Primitive data type)
+			
+
+Primitive Data Type :
+				1. Integer (byte - 1 byte (-128 to 127)  , short - 2 bytes , int - 4 bytes, long - 8 bytes) (both positive & negative  non decimal numbers)
+				2. Float (float - 4 bytes , double - 8 bytes) (both positive & negative decimal numbers)
+				3. Character (char - 2 bytes) (only a single character)
+				4. Boolean (  boolean - 1 byte) (used to store two values :- True or False )
+	
+****	
+				
+
+
+Compilation error:
+
+When writing a code I made a mistake in the syntax
+
+****
+
+syntax 
+//datatype variable_name= value;
+
+****
+
+Control statements:
+
+	1. Selection
+		if..else
+			if(condition)
+			{
+				true block
+			}
+			elseif(condition)
+			{
+				true block
+			}
+			else
+			{
+				false block
+			}
+		
+		** if statements contains inside if statements called Nested if statements
+		
+		switch..case  -- range of condition or fixed condition
+		
+	2. Iteration
+		for (initialization;condition;increment/decrement)  --> Iterate the index, it is bidirectional 
+		for..each  --> iterate the value, it is unidirectional
+			for(datatType eachValue:set)
+			{
+			}
+			
+		while
+		do while
+	3. Jump
+		break
+		continue
+		
+		
+		
+****
+		
+		
+Operators:
+			1. Arithmetic (+,-,/,*,%)
+			2. Comparison (<,<=,>,>=
+			3. Assignment
+			4. Logical (&&,||,!not)
+			5. Incremental, Decremental (++i , Impact will be on same line) (i++ , Impact will be on next line)
+			
+****			
+
+
+Methods:
+ It is a block of code which contains the action to perform.
+ 
+ convention:  Should start with lower case and first letter of the upcoming words should be in upper case.   -->methods & variables
+ 
+ 
+	syntax:
+	
+	accessModifier returnType methodName (arguments)
+		{
+		
+		}
+		
+		
+		
+	numberOne    --> variable 
+	numberOne()  --> method always ends with pair of parenthesis
+	
+
+Access Modifier :
+		It is the restriction to access.
+		In java class,methods & variables can be restricted like  who can use it & who cannot use.
+		
+	Mobile 	  --> accessible by you
+	Car    	  --> accessible by family
+	Door bell --> accessible by anyone
+	
+	Public  - any body inside the project
+	Private - Can used inside the class not outside the class
+	Package/default/no-modifier - Within package anybody can access 
+	Protected  - it behaves same as Package . 
+				It is visible with in the package, 
+				Outside the package , it is visible only to the inherited class
+					
+	
+
+
+Return type :
+	Actions can have two types of return .
+	1. Action does not give any output --> Void
+	2. Action give me an output  --> specific data type 
+	3. Return statement the last line of code in the method
+	
+	
+Arguments: 
+
+the actual value or data you pass into a method	
+
+public int addTwoNumber (int a , int b)
+{
+	int x=a+b;
+	return x;
+}
+
+
+Method level variable/ Local variable  --> if you created/declared  inside the method . It can accessible only inside the method.
+Class/Global level variable -->  Can be accessed by all methods of the class.
+
+
+
+Object :
+
+Class is a blue print which defines some properties and behaviours. Where as Object is an instance of a class which has those properties and behaviours attached.
+
+
+Representative of the class is Object.
+Instance of class refers to an object created from that class.
+	
+		Syntax:
+		ClassName objectName = new ClassName();
+		ClassName()  --> Constructor
+		
+		
+		
+Array:
+	Array is a concept of storing multiple values of same datatype in the same variable.	
+	
+	When u create an empty array and do not assign value to the array deafult value wil be stored.
+	
+	String[] array_name={values....}
+	int[] array_name=new int[5]  
+	
+	
+String:
+	A String is a sequence of characters used to represent text. 
+	It is one of the most commonly used classes in the Java programming language and is part of the java.lang package.
+		
+		
+		String name="TestLeaf";  // String Literal
+		String fed=new String("TestLeaf"); //String Object
+		
+	When you create a string literal, it is stored in String constant pool memory, and if another string with the same value exists, it reuses the reference.Consume low  Memory space.
+	When you create a string object, it is stored in the heap memory. Will create new object, 
+	Even values are same memory not shared 
+	
+	'=='  --> compares the memory location not the values
+	
+	To compare two string use equals() , dont use ==
+	
+	** String is immutable (can't manipulate)
+	
+	Methods in String class:
+		1. length -> .length()
+		2. Convert to upper class --> .toUpperCase();
+		3. Convert to lower class --> .toLowerCase();
+		4. Adding to two string (Concatination) --> String1+String2  or String1.concat(String2)   
+													"+" --> Concatination operator
+		5. String comparison --> string1.equals(string2)
+							 --> string1.equalsIgnoranceCase(string2)
+		6. Partial string comparison  --> string1.contains(string2)
+		7. Find character to character --> string1.charAt(i)
+		   convert a string/word into character array --> toCharArray(i)
+		8. Split the sentence --> .split()   
+		9. Split the word  --> .substring(index)
+		10.Split the word from range --> .substring(startIndex,endIndex)
+		
+		
+		
+OOPS (Object Oriented Programmimg):
+			In simple words, it’s a way of writing programs by organizing code into objects instead of just functions and logic.
+			Java is designed around OOPS principles, which help in creating modular, reusable, and maintainable code.
+			OOPS makes object more powerful and robust .
+			Used to improve coding standards and performance
+			
+			
+		Four Pillars of OOPS:
+			1. Abstraction - Hiding the implementation and expose only the behavior 
+							 Abstraction in OOP means hiding the internal details of how something works and showing only the essential features.
+				
+				Achieved using:
+					Interfaces:	
+								An interface is a blueprint of a class. 
+								An interface is a collection of abstract methods (methods without implementation) and constants.
+								Purpose of interface is achieve Abstraction & Multiple Inheritance in java
+								
+							
+						Key Points:	
+								Used heavily in Seleinium.
+								Achieves 100% abstraction.
+								You cannot create an object of an interface.
+								All methods in an interface are public and abstract by default
+								Variables in an interface are public, static, and final by default.
+								A class uses implements keyword to use an interface.
+								A class can implement multiple interfaces (Java supports multiple inheritance through interfaces).
+								Does not Supports Constructor and  variables
+								
+					Abstract class:
+								Declared using abstract keyword.
+								Can have atleast one abstract method.
+								Can also have concrete method.
+								Supports Constructor and  variables
+					
+						Key Points:	
+							
+							Achieves partial  abstraction.
+							You cannot create an object of an interface.
+							Supports Constructor and  variables
+							A class uses extends keyword to use an abstract class.
+						
+							
+							 
+							 
+				Where Used :
+							Seleinium: Seleinium itself best example for abstraction.
+										Webdriver, Webelement, Alert etc..
+							Framework: Driver factory, base class
+									   Step Definition & POM  is the best example for abstraction.			 
+						 
+							 
+							 
+							 
+							 
+							 
+							 
+							 
+			2. Inheritance - It allows one class(Child /Sub class) to  acquires the properties and behaviours of  another class(Parent/Super). 
+							 You are able to reuse more code.
+							 Establishes a hierarchical relationship between classes.
+							 Achieved by extends keyword
+							
+						Types:
+							1. Single/Simple - a class inherits from only one superclass. This means a child class (subclass) can extend only one parent class at a time.
+									Class A(Parent/Super)  --> Class B (Child/Sub class)
+									Class B extends Class A 
+									(*)We can access parent class methods & properties in child class using child class object.
+									
+									
+							2. Multilevel - Multilevel inheritance means a class inherits from a class that itself inherits from another class—forming a chain.
+									Grandfather --> Parent --> Child
+							
+							
+							
+							3. Multiple (Java does NOT support multiple inheritance with classes (to avoid ambiguity), but it supports it through interfaces.)
+								
+								Class  --> Class = Extends
+								Class  --> Interface = Not Possible
+								Interface --> Class = Implements
+								Interface --> Interface = Extends
+								
+					Where Used :
+							Seleinium: Browser setup code, baseclasses, resusable methods
+							Framework: Common framework structure
+									  Common actions base page and specific page logic in child page
+									   POM  is the best example for Inheritance.			 		
+							 
+							 
+							 
+			3. Polymorphism - One object, many implementations 
+							  In Java the same method name behaves differently based on parameters,Object type 
+							
+							
+							Types:
+								1. Static Binding / Compile Time Polymorphism
+									Achieved by Method Overloading
+									Happen within class
+									Creating same method is not allowed , but able to achieve by increasing no.of arguments or by changing the type of arguments
+								2. Dynamic Binding / Run Time Polymorphism
+									Achieved by Method Overriding
+									Method in parent class , reimplemented in child class
+									Happen within the inherited class
+									Achieved using Inheritance
+						
+						Where Used :
+							Seleinium: Run Time Polymorphism
+										Webdriver - Parent
+										ChromeDriver - Child 
+									   Compile  Time Polymorphism
+										Actions 
+										Alerts
+										
+										
+							Framework: Cross browser testing
+									   Step Definition & POM  is the best example for abstraction.								
+									
+			4. Encapsulation - Wrapping data(variables) and methods together in a class 
+							   Restricting direct access to data
+							 
+							 Key Points:
+								The data inside a class is kept private.
+								Access to that data is given through public getter and setter methods.
+								This helps protect data from unauthorized access or modification.
+							 
+							 Where Used :
+								Seleinium: Encapsulation in Seleinium used to hide Webelements and expose only user actions through method.
+								Framework: It improves maintainablity, security and reduce impact when UI changes occurs.
+										   Page Object Model is the best example for encapsulation.
+
+
+********************************
+							 
+Collections:
+		Collection is a concept of storing multiple data into a single variable	based on some condition.
+		Array is size fixed while creation whereas collection may grows or shrinks .
+		Collection is a dynamic in size.
+		
+		Java Collections Framework provides a set of interfaces (like List, Set, and Map) and 
+												a set of classes (ArrayList, HashSet, HashMap, etc.) that implement those interfaces.
+		
+		Example: Think of the Collections Framework as a toolbox.
+			Interfaces like List define what tools can do, and classes like ArrayList are the actual tools that do the work.
+			
+			
+			1. List
+				List is a single dimensional collection.
+				List is a Interface
+				Props:
+					1. List maintains the insertion order 
+					2. List allow duplicate values 
+						
+				List is a single dimensional collection.
+				List is a Interface
+					ArrayList:	
+							List -> Interface
+							ArrayList -> Implementation class (Predefined / Library class)
+							In the generic we are not allowed to store primitive datatypes 
+				
+						-- list.add(value) -->  it will add value in arrayList
+						--list.add(index,value) --> it will add the value in the index place
+						--list.set(index,value) --> it replace the value in the index place
+						list.size() --> Provides size of the array
+						--list.remove(value) --> removes the value 
+						-- list.get(index)  --> Provides the value of the index
+						list.contains(value) --> verify values present in List
+						--list.clear() --> Remove all the values from the list
+						list.isEmpty() --> Provide true or false if list is empty
+						Collections.sort(list) --> Order the list in ascending order
+						-- list.indexOf(value) --> Getting the index of the value
+				
+				
+			2. Set
+				Set is a single dimensional collection.
+				Set is also an interface
+				Props:
+					1. Set may or may not maintains the insertion order 
+					2. Set do not allow duplicate values 
+					
+				Common classes that implement Set:
+					1. HashSet- Random order as output
+					2. TreeSet - Ordered output
+					3. LinkedHashSet - Maintain insertion order 
+					
+				No update, get ,insert,remove supports	
+					
+				.addAll() --> To add the set/list to list/set
+					List -> Set
+					List -> List 
+					Set-> Set
+					Set-> List
+					
+				Want to iterate over the set 
+					1. Use foreach loop
+					2. Convert the set into list , then iterate over the list
+					
+			3. Map( Table of data)
+				Map is a two dimensional collection.
+				Map is also an interface
+				Map represents a collection of key-value pairs.
+					Entry --> <Key,Value>
+					<Key,Value>  --> Pair of data
+					Key --> Set (do not allow duplicate values )
+					Value --> List (allow duplicate values )
+					
+					Map is a collection of Entry  Map--> Collection<Entry>
+					Map is a set of Entry      	  Map--> Set<Entry>
+												  Map -->Set<Entry<Key,Value>>
+				
+				Common classes that implement Map:
+					1. HashMap- Random order as output  --> Based on Key
+					2. TreeMap - Ordered output --> Based on Key
+					3. LinkedHashMap - Maintain insertion order --> Based on Key
+					
+					map.put(key,value) --> To add values 
+					map.get(key)  --> To get the values
+					.getKey() --> to get the key
+					.getValue() --> to get the values 
+					.containsKey(Key) --> to check the keys
+					.containsValue(Values) --> to check the Values
+			
+			
+			
+			
+Constructor:
+		A constructor is a special block of code that runs when you create an object of a class. 
+		Its main job is to initialize the object’s state (i.e., set up fields with starting values).
+		LearnCons object_name=new LearnCons();
+			LearnCons() --> calling the constructor and it gives the reference of the class.
+			new --> creates new memory space in heap memory to store the reference of the class.
+		Without objext  creation we cannot excute anything. So Java creates a virtual constructor to provide the object.
+		
+		Constructor is a special method where methodName is a class name and it does not return any value.
+		
+		
+Static:
+	Static means “belonging to the class, not to instances.”
+	static member is created once per class not per object
+	Memory is allocated only once when the class is loaded.
+	Can access static members via the class name ,no object creation is needed to access static members
+	Static value cannot change , non-static value can change.
+	Static store in Stack/ Class level memory where as non-static stores in heap memory
+	
+	Important Points:
+		Static variable can access in any method without using any object .
+		A non static method can access another non-static method without using any object
+		A non-Static variable/not defined globally  can access only within that  method without using any object.
+		Static methods and variables can’t access non-static members directly.
+		
+		
+	
+			
+	
+			Differnce between Static vs Non-Static Members:	
+					Static Belongs To	Class (shared by all objects) where as 	Non-Static Belongs To Individual object (unique per instance)
+					Static Memory Allocation Created once when class is loaded where as Non-Static Memory Allocation Created separately for each object
+					Static can	access using class name where as Non-Static can	access  using object reference
+					Static Can Access only other static members directly	where as Non-Static Both static and non-static members
+					Static Common Use	Utility methods, constants, shared data	where as Non-Static Object-specific data and behavior
+	
+	
+	Static can be used in places :
+		1. Static Variable  (Class variable) -- shared among all instances of the class 
+												value of the variable remains same everywhere 
+												Static variable can access with class name & not with object 
+		2. Method level  -- belongs to the class rather than to any object.
+							Static method can access with class name & not with object and methods directly
+							method cannot be overridden(i.e cannot be used in another class)
+							Cannot use "this" & "super" keywords
+	
+	
+	
+Final:
+	Final is a modifier you can apply to variables, methods, and classes to prevent further modification or extension
+
+
+	Final can be used in places :
+		1. Class level --> If it is final class it cannot be inherited.
+		2. Method level  --> If it is final method it cannot be overridden.
+		3. Variable level  --> If it is final variable it cannot be changed.
+		
+		
+	Common confusions
+		final vs finally vs finalize:	
+			final: modifier preventing change/inheritance (this note).
+			finally: try/catch block that always executes (for cleanup).
+			finalize(): legacy GC hook; deprecated/removed in modern Java.	
+		
+	
+	
+	this --> used to call the current class reference or method
+	super --> used to call the parent class reference or method
+	
+	
+	
+Exceptions:
+	 Exception Handling is a mechanism to handle runtime errors so that the normal flow of the program doesn’t crash unexpectedly.
+	 Instead of stopping execution, we catch and handle these situations.
+	 All exceptions are class
+	 Exceptions are run time error
+	 
+	 Example problem:
+		Element not found
+		File not found
+		Timeout while waiting
+		Null value access
+		
+	Types of Exception:
+		1. Checked Exceptions 
+				Checked at Compile time 
+				Must be handled using try-catch or throws
+				Examples:
+					IOException
+					SQLException
+					FileNotFoundException
+		2. Unchecked Exceptios
+				Occurs  at run time 
+				Not mandatory handle
+				Examples:
+					NullPointerException
+					ArrayIndexOutOfBoundsException
+					ArithmeticException
+	 try , catch , finally, throw, throws
+		if try is there should followed by catch or finnally
+		try --> action
+		catch --> catches the exceptions
+		finally --> will happen if the action success or failed 
+		
+		throw --> Used to explicitly throw an exception . It used inside the method
+	
+	
+	
+	
+	
+	
+	
+			
+			
+			
