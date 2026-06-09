@@ -1,0 +1,12 @@
+Step1: Read the tesng.xml file
+Step2: tesng configures & queue  your testcases based on 
+	   their insertion order (if you dont have any execution conditions)
+Step3: Identify the @Test 
+Step4: After identifying @Test , it will find top most testng annotation in the hierarcy
+	   @BeforeTest --> Excelfilename Set
+Step5: Next tesng annotation will execute
+	   @DataProvider
+Step6: @DataProvider calls ReadExcelData class & pass the excel file name and get the data as [][].
+Step7: Based on the number of data available , testng configures @Test
+Step8: Based on the configured no.of times @BeforeMethod,@Test,@AfterMethod will be executed.	    
+
