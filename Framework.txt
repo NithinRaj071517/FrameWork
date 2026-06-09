@@ -1,0 +1,208 @@
+Framework 
+=================
+
+Explanation:
+
+In my current project, we use a cucumber BDD Framework developed using Java, Selenium WebDriver,  TestNG, Maven, and Jenkins. We follow the Page Object Model (POM) design pattern to improve maintainability and reusability.
+
+The framework starts with Feature Files where test scenarios are written in Gherkin language. These scenarios are easy for Business Analysts, Developers, and Testers to understand.
+
+Each step in the feature file is mapped to Step Definition classes. The step definitions contain the implementation logic and call methods from the Page Object classes.
+
+In the Page Object classes, we maintain all web element locators and reusable methods. This helps us avoid duplicate code and makes maintenance easier when UI changes occur.
+
+We use Hooks (@Before and @After) for browser initialization, closing the browser, and capturing screenshots when a test fails.
+
+The Test Runner class controls execution using tags such as @Smoke, @Regression, and @Sanity.
+
+Maven is used for dependency management and build execution. The framework is integrated with Jenkins, which triggers automated execution after every deployment or based on a schedule.
+
+We generate Extent Reports and Cucumber Reports after execution. Failed scenarios automatically capture screenshots and attach them to the report.
+
+We also use Scenario Outline and DataTables for data-driven testing.
+
+This framework helps us achieve better code reusability, maintainability, readability, and faster regression execution
+
+
+FOLDER STRUCTURE:
+=====================
+
+Project
+│
+├── Feature Files
+│
+├── Step Definitions
+│
+├── Page Objects
+│
+├── Hooks
+│
+├── Utilities
+│
+├── Test Data
+│
+├── Config Files
+│
+├── Runner Class
+│
+└── Reports
+
+
+1.Feature file:
+=====================
+
+Feature files contain all business scenarios written in Gherkin language using Given, When, Then. These files are prepared based on requirements or user stories.
+
+2.Step definition:
+======================
+Step Definition classes act as a bridge between feature files and automation code. Every step in the feature file is mapped to a Java method
+
+
+3.Page object model:
+========================
+We maintain all locators and page-specific methods in Page Object classes. This improves reusability and reduces maintenance effort
+
+4.Hooks:
+===============
+Hooks are used for common preconditions and postconditions. We launch the browser in @Before and close it in @After. We also capture screenshots for failed scenarios
+
+5.utilities:
+======================
+Utility classes contain reusable methods such as waits, screenshots, Excel reading, configuration reading, and browser setup
+
+
+6.Runner classes:
+==================
+The Runner Class controls test execution. We specify feature file paths, step definition paths, reporting plugins, and tags
+
+7.reports:
+==================
+After execution, Extent Reports and Cucumber Reports are generated. These reports show passed, failed, and skipped test cases along with screenshots
+
+
+
+what is cucumber?
+
+
+cucumber is BDD framework (behaviour data driven development) approach used for write test scenarios in gerkhin language and its easy to understand for BA. testers and developers
+
+components of cucumber?
+
+1.Feature file
+2.step definition
+3.runner class
+4.pom
+5.hooks
+6.testdata files
+7.configuration files
+8.reports
+
+what is feature file?
+
+it contains the test scenarios of business requirements which is written in gerkhin language
+
+what is gerkhin and its keywords?
+
+gerkin is a lanugauge is used to write test scenarios in cucumber
+
+FEATURE  --> describe the functionality being tested
+GIVEN --> precondition or initial stage
+WHEN -->action performed by user
+THEN --> validation or expected output
+BUT --> used for specify exceptions or negative conditions 
+SCENARIO  --> represent a testcase
+SCENARIO OUTLINE --> single testcase with multiple test data
+BACKGROUND --> contains common steps that run before every scenario in a feature file.
+AND --> combine multiple steps of same type
+
+
+
+what is difference between background and hooks?
+
+
+Background is used to define common business preconditions that are executed before every scenario in a feature file, reducing duplication of Gherkin steps.
+
+
+hooks is used for frameworksetup not written in feature file like..Browser launch, Browser close, Database connection, Screenshot capture on failure
+
+
+what is glue?
+
+is nothing but like a connection bridge between step defentions, feature file and hooks , if the feature file executes means corresponding java methods also needs to execute thats y we used glue
+
+
+we can use multiple glue packages , and if the glue is not mentioned properly means getting undefined step exception
+
+
+One step is used in multiple feature files. How do you handle it?
+
+Create a common Step Definition method and reuse it.
+
+how do you execute smoke test alone?
+
+
+using tags which is mentioned in feature file above the scenario and mentioned in runner class
+
+
+why monochrome is set as true?
+
+to get clear output and easy for readable
+
+
+where is the cucumber option is present?
+
+
+it's in runner class and acts as configuration  for feature file, step definition path
+
+
+"How do you run the same test case in different browsers and different environments like DEV, QA, and UAT?"
+
+Sample Answer
+
+"In my framework, both the environment and browser are parameterized. We maintain separate configurations for DEV, QA, and UAT environments, and the browser type is passed during execution. Based on the parameters, the framework dynamically loads the required URL and launches the specified browser such as Chrome, Firefox, or Edge.
+
+For example, I can run the same test case on QA with Chrome, UAT with Firefox, and DEV with Edge by passing different execution parameters.
+
+For parallel execution, we use TestNG/Jenkins along with ThreadLocal WebDriver, which ensures each execution gets its own browser instance without interfering with other tests."
+
+
+Which plugin is used for screenshots in Cucumber?
+
+A common point of confusion is that screenshots are not captured using a Cucumber plugin directly.
+
+Screenshots are usually captured using:
+
+Selenium's TakesScreenshot interface
+Hooks (@After)
+Reporting tools such as Extent Reports or Allure Reports
+
+
+If there is a new enhancement only in the Login functionality, where will you make the changes
+
+
+In our framework, we follow the Page Object Model. If an enhancement is related only to Login functionality, I first identify whether the change is in the UI, business flow, or test data. Most changes are made in the Login Page Object class because locators and page actions are maintained there. If new user actions are introduced, I update the Step Definitions and Feature Files as needed. This design minimizes the impact on other modules and improves maintainability
+
+
+different passwords for different users and don't want them hardcoded in the feature file?
+
+If different users require different passwords, I would not hardcode them in the Scenario Outline. I would pass only the username through the Examples table and fetch the corresponding password from an external source such as Excel, JSON, properties files, or a database. This keeps sensitive data out of feature files and makes maintenance easier
+
+
+In a railway booking page, I need to select the seat in the 2nd row and 3rd column. How will you automate it?
+
+I would first inspect the seat layout. If it is a table structure, I would use dynamic XPath with row and column indexes such as tr[row]/td[column]. If the layout is built using div elements, I would identify a common locator, store the seats in a list, calculate the desired position, and click the required seat. I would also add validation to ensure the seat is available before selecting it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
