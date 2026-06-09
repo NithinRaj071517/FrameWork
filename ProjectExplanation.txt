@@ -1,0 +1,23 @@
+Automated using - Selenium + java
+TestNG used for execution framework  
+Project managed by using Maven
+Extent Report used for customized report
+Maintain test data in excel and reterieving using apache POI
+Project is connected Multi level Inheritance.
+
+
+Two interface --> Browser - Contains actions & methods responsible to Browser level
+				  Element - Contains actions & methods responsible for Element level actions, verification & Validation
+
+Another super class --> Reporter --> Initiation & creation of customized Report.
+
+These abstract class & interface are  implement  in  super most class in framework called SeleniumBase
+Which integrated Selenium actions with Java exception handling along with customized report
+
+Mid level class- Project Specific method
+Contains test case level actions like Opening, closing , maximizing the browser 
+
+ Page Object Model design pattern using so all the pages described Pages
+ Test - integrated our pages 
+ 
+ Triggering XML file
