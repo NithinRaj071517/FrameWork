@@ -1,0 +1,116 @@
+FrameWork Overview :
+	I have developed BDD based Hybrid automation framework using Cucumber, Selenium , TestNG and Maven designed following Page Object Model and modular architecture.
+	The framework is designed to be scalable , maintainable , and aligned with enterprise standard and supports end to end testing
+	This framework supports:
+		1. BDD execution using Gherkin 
+		2. Page Object Model design 
+		3. Parallel Execution
+		4. Cross browser Testing
+		5. Data driven Testing
+		6. Integrated reporting and database validation
+		
+		
+FrameWork Structure :
+	My framework is structured in multiple layers
+		1. Feature Files (Gherkin) 
+				Define test scenarios in bussiness readable format
+		2. Step Definitions
+				Map feature/Gherkin steps to Java methods
+				Acts as a bridge between feature files and POM layer
+		3. Page Object Model	
+				Contains all page classes like LoginPage , PortinPage etc
+				Holds locators and resusable methods
+				Improves maintainability and reduces duplication
+		4. Hooks
+				Used for setup and teardown actions 
+				Driver initialization, closing browser, screenshot on failure
+		5. Utils Layer
+				DriverFactory for thread-safe driver management 
+				WaitUtils, ActionsUtils for reusable actions
+				ConfigReader & TestDataReader for external data handling
+				DBUtils for database validation
+				ExtentReports for reporting
+		6. Runner class
+				Executes feature files
+				Configured with TestNG
+				Controls execution and parallel run
+		7. Resources Layer
+				Stores config, test data, and feature files
+		8. Reports
+				Cucumber HTML & JSON reports
+				Extent Report for detailed execution results
+				
+Parallel Execution:
+		I implemented parallel execution using TestNG with DataProvider (parallel=true).
+			Each scenario runs in parallel
+			Used ThreadLocal in DriverFactory to ensure one driver per thread
+			Prevents session conflicts
+			Controlled via TestNG XML thread-count
+			
+			
+Cross-Browser Testing:
+		For cross-browser execution:
+			Browser is passed via config file or TestNG XML
+			DriverFactory initializes browser dynamically
+			Supports Chrome, Firefox, Edge
+			
+Reporting & Validation:
+		Cucumber Reports (HTML + JSON)
+		Extent Reports for detailed reporting
+		Database validation using DBUtils after UI/API actions. Ensures end to end validation.
+		
+		
+		
+				┌────────────────────┐
+                │   Feature Files    │
+                │ (Gherkin Scenarios)│
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │ Step Definitions   │
+                │ (Glue Code)        │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │ Page Object Model  │
+                │ (UI Actions + Locators)
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │   Utils Layer      │
+                │ DriverFactory      │
+                │ WaitUtils          │
+                │ ActionsUtils       │
+                │ ConfigReader       │
+                │ DBUtils            │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │ Test Runner (TestNG)│
+                │ Parallel Execution  │
+                └─────────┬──────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ Chrome       │  │ Firefox      │  │ Edge         │
+│ Execution    │  │ Execution    │  │ Execution    │
+└──────────────┘  └──────────────┘  └──────────────┘
+
+                          │
+                          ▼
+                ┌────────────────────┐
+                │   Reports Layer     │
+                │ Cucumber + Extent   │
+                └────────────────────┘
+
+                          │
+                          ▼
+                ┌────────────────────┐
+                │   Database Layer    │
+                │   (DB Validation)   │
+                └────────────────────┘
