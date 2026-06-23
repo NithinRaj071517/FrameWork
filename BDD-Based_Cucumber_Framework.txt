@@ -30,6 +30,7 @@ FrameWork Structure :
 				ConfigReader & TestDataReader for external data handling
 				DBUtils for database validation
 				ExtentReports for reporting
+				This layer ensures code reusability, consistency, and avoids duplication across the framework.	
 		6. Runner class
 				Executes feature files
 				Configured with TestNG
